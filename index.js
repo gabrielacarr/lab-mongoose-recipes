@@ -31,6 +31,10 @@ mongoose
       .then(res => (res))
       .catch(err => console.log(err))
 
+      //Iteration 3
+    Recipe.insertMany(data)  //3 seconds 
+    .then(res => { 
+
 
   })
   .catch(error => {
