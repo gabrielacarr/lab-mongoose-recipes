@@ -48,6 +48,22 @@ mongoose
           .then(res => console.log('carot cake deleted'))
           .catch(err => err)
 
+             
+        setTimeout( () => mongoose.connection.close() , 0)  // Adds to the end. 
+
+
+        //Solution using thens.
+        // Recipe.findOneAndUpdate({title:'Rigatoni alla Genovese'}, {duration: 100}) //avoids race condition ... We used a promise
+        //   .then(res => { 
+        //       console.log('rigatonoi updated') 
+        //       Recipe.deleteOne({title: 'Carrot Cake'})
+        //       .then(res => { 
+        //           console.log('carot cake deleted')
+        //            mongoose.connection.close()
+        //       })
+        //       .catch(err => err)
+
+        // }).catch(err => err)
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
