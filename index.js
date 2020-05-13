@@ -64,6 +64,7 @@ mongoose
         //       .catch(err => err)
 
         // }).catch(err => err)
+      }).catch(err=> console.error(err))
   })
   .catch(error => {
     console.error('Error connecting to the database', error);
