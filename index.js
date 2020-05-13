@@ -35,6 +35,18 @@ mongoose
     Recipe.insertMany(data)  //3 seconds 
     .then(res => { 
 
+     //Iteration 4
+
+        //BONUS FIGURE OUT USING PROMISE.ALL and using async await 
+
+        
+        Recipe.findOneAndUpdate({title:'Rigatoni alla Genovese'}, {duration: 100}) //avoids race condition ... We used a promise
+          .then(res => { console.log('rigatonoi updated') })
+          .catch(err => err)
+
+        Recipe.deleteOne({title: 'Carrot Cake'})
+          .then(res => console.log('carot cake deleted'))
+          .catch(err => err)
 
   })
   .catch(error => {
