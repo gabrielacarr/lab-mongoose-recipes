@@ -67,6 +67,7 @@ mongoose
 
 
         // import 
+        // download all the notations serpeatly 
       }).catch(err=> console.error(err))
   })
   .catch(error => {
